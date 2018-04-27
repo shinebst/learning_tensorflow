@@ -1,0 +1,24 @@
+#学习如何定义变量，初始化变量，定义常量，定义增量，for循环
+
+import tensorflow as tf
+
+state = tf.Variable(9,name='counter')
+print(state.name)
+
+one = tf.constant(1)
+
+new_value = tf.add(state,one)
+update = tf.assign(state,new_value)
+
+init = tf.global_variables_initializer()
+#must have if define variable
+#变量初始化之后才有值
+
+with tf.Session() as sess:
+    sess.run(init)
+    print(sess.run(state))
+    #state一定要用sess.run才能显示结果
+    
+    for _ in range(3): #_前后都有空格
+        sess.run(update)
+        print(sess.run(state))
