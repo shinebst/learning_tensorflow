@@ -1,0 +1,11 @@
+#用placeholder相当于和feed_dict绑定，可以实现在run的时候重新赋值
+import tensorflow as tf
+
+input1 = tf.placeholder(tf.float32)
+input2 = tf.placeholder(tf.float32)
+
+output = tf.multiply(input1,input2)
+
+with tf.Session()as sess:
+    print(sess.run(output,feed_dict={input1:[7.],input2:[2.]}))
+    #key键：值
