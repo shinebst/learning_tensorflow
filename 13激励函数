@@ -1,8 +1,0 @@
-激励函数active function:用于非线性问题，是输出结果呈现非线性特征。
-for example:relu,sigmoid,tanh
-
-默认
-  少量层结构:随意
-  CNN:relu
-  RNN：relu/tanh
-  
